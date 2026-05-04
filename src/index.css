@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+:root {
+  --font-display: "Urbanist", sans-serif;
+  --breakpoint-3xl: 1920px;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-display);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #000000;
+    color: #ffffff;
+    overflow-x: hidden;
+  }
+
+  /* ── Dark theme (default) ── */
+  [data-theme='dark'] body {
+    background-color: #000000;
+  }
+
+  /* ── Blue Accent theme ── */
+  [data-theme='blue'] body {
+    background-color: #020c1b;
+  }
+
+  /* ── Scrollbar ── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #0a0a0a; }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #3b82f6, #06b6d4);
+    border-radius: 6px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #60a5fa, #22d3ee);
+  }
+  * { scrollbar-width: thin; scrollbar-color: #3b82f6 #0a0a0a; }
+
+  .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  .hide-scrollbar::-webkit-scrollbar { display: none; }
+
+  /* ── Animations ── */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fadeIn { animation: fadeIn 0.5s ease-out forwards; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-12px); }
+  }
+  .animate-float { animation: float 4s ease-in-out infinite; }
+
+  @keyframes shimmer {
+    0%   { background-position: -200% center; }
+    100% { background-position:  200% center; }
+  }
+  .animate-shimmer {
+    background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 50%, #3b82f6 100%);
+    background-size: 200% auto;
+    animation: shimmer 3s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}

@@ -1,0 +1,96 @@
+export const projects = [
+    {
+        id: 1,
+        title: 'E-Commerce Platform',
+        description: "Full-stack e-commerce platform with product management, cart, checkout, and payment integration. Features include admin dashboard, inventory management, and order tracking.",
+        img: "/images/projects/project1.png",
+        category: 'Full Stack',
+        technologies: ['React', 'Django REST', 'PostgreSQL', 'Stripe', 'Tailwind'],
+        metrics: '2.5K Users',
+        demourl: 'https://example.com/ecommerce',
+        githubUrl: 'https://github.com/ashok0960/ecommerce',
+        features: ['Product Catalog', 'Shopping Cart', 'Payment Processing', 'Order Management', 'Admin Dashboard'],
+        stats: { users: '2.5K+', revenue: '$50K+', uptime: '99.9%' }
+    },
+    {
+        id: 2,
+        title: 'WanderLuxe - Tours & Travels Platform',
+        description: "Comprehensive travel booking platform featuring destination discovery, itinerary planning, real-time availability, and secure payment integration. Helps travelers explore exotic locations with personalized tour packages and seamless booking experience.",
+        img: "/images/projects/project2.png",
+        category: 'Full Stack Development',
+        technologies: ['React', 'Django', 'Mysql', 'Tailwind CSS', 'Stripe'],
+        metrics: '10K+ Bookings',
+        demourl: 'https://wanderluxe-demo.com',
+        githubUrl: 'https://github.com/ashok0960/tour-and-travel.git',
+        features: [
+            'Interactive destination search with filters',
+            'Real-time availability & pricing',
+            'Secure payment gateway (Stripe)',
+            'Itinerary builder & trip planner',
+            'User reviews & ratings system',
+            'Booking confirmation & e-tickets',
+            'Multi-language support',
+            'Mobile-responsive design'
+        ],
+        stats: {
+            bookings: '10K+',
+            destinations: '50+',
+            satisfaction: '98%',
+            partners: '120+'
+        }
+    },
+    {
+        id: 3,
+        title: 'Social Media Dashboard',
+        description: "Social analytics dashboard providing insights from multiple platforms. Real-time metrics, engagement tracking, content calendar, and automated posting capabilities.",
+        img: "/images/projects/project3.png",
+        category: 'Full Stack',
+        technologies: ['React', 'Django', 'PostgreSQL', 'Chart.js', 'Celery'],
+        metrics: '10K Data Points',
+        demourl: 'https://example.com/social-dashboard',
+        githubUrl: 'https://github.com/ashok0960/social-dashboard',
+        features: ['Multi-Platform Analytics', 'Content Calendar', 'Auto-Posting', 'Real-time Metrics', 'Report Generation'],
+        stats: { metrics: '10K+', platforms: '4+', companies: '200+' }
+    },
+    {
+        id: 4,
+        title: 'Portfolio Website',
+        description: "Modern, responsive portfolio website showcasing work and skills. Features smooth animations, dark mode, and optimized performance with Vite and React.",
+        img: "/images/projects/project4.png",
+        category: 'Frontend',
+        technologies: ['React', 'Vite', 'Tailwind CSS', 'Framer Motion'],
+        metrics: 'In Progress',
+        demourl: 'https://ashokkarki.com',
+        githubUrl: 'https://github.com/ashok0960/portfolio',
+        features: ['Smooth Animations', 'Dark Mode', 'Responsive Design', 'SEO Optimized'],
+        stats: { lighthouse: '98', performance: '95', accessibility: '100' }
+    },
+    {
+        id: 5,
+        title: 'Learning Management System',
+        description: "Comprehensive LMS with course management, student progress tracking, quizzes, assignments, and certification. Includes video hosting and interactive content.",
+        img: "/images/projects/project5.png",
+        category: 'Full Stack',
+        technologies: ['React', 'Django', 'PostgreSQL', 'Video.js', 'AWS S3'],
+        metrics: '1.5K Students',
+        demourl: 'https://example.com/lms',
+        githubUrl: 'https://github.com/ashok0960/lms',
+        features: ['Course Management', 'Progress Tracking', 'Interactive Quizzes', 'Certifications', 'Video Hosting'],
+        stats: { courses: '50+', students: '1.5K+', completion: '85%' }
+    },
+    {
+        id: 6,
+        title: 'Weather Forecast App',
+        description: "Real-time weather application with location-based forecasts, weather maps, alerts, and beautiful UI. Fetches data from multiple weather APIs.",
+        img: "/images/projects/project6.png",
+        category: 'Frontend',
+        technologies: ['React', 'OpenWeather API', 'Mapbox', 'Tailwind CSS'],
+        metrics: '50K+ Users',
+        demourl: 'https://example.com/weather',
+        githubUrl: 'https://github.com/ashok0960/weather-app',
+        features: ['Real-time Forecasts', 'Weather Maps', 'Location Services', 'Alerts', 'Historical Data'],
+        stats: { users: '50K+', requests: '1M+/day', accuracy: '98%' }
+    }
+];
+
+export const categories = ["All", "Frontend", "Full Stack"];
