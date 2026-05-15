@@ -73,7 +73,7 @@ export const projects = [
         category: 'Frontend',
         technologies: ['React', 'Vite', 'Tailwind CSS', 'Framer Motion'],
         metrics: 'In Progress',
-        demourl: 'https://ashokkarki.com',
+        demourl: 'https://ashokkumarkarki.com.np/',
         githubUrl: 'https://github.com/ashok0960/portfolio',
         features: ['Smooth Animations', 'Dark Mode', 'Responsive Design', 'SEO Optimized'],
         stats: { lighthouse: '98', performance: '95', accessibility: '100' }
