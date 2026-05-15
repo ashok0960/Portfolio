@@ -4,34 +4,49 @@ import { PERSONAL_INFO, SOCIAL_LINKS } from '../utils/constants'
 import FadeIn from '../animations/FadeIn'
 import { Mail, MapPin, Phone, Send, CheckCircle, AlertCircle, Loader, ArrowRight } from 'lucide-react'
 
-const SERVICE_ID  = 'service_7hxpv0q'
-const TEMPLATE_ID = 'template_qujyabt'
-const PUBLIC_KEY  = 'Sd4iHTwEBiWWCCa-r'
+// ✅ Replace these with your actual EmailJS credentials from https://dashboard.emailjs.com
+const SERVICE_ID  = 'service_k2d1rej'   // EmailJS → Email Services → Service ID
+const TEMPLATE_ID = 'template_qujyabt'  // EmailJS → Email Templates → Template ID
+const PUBLIC_KEY  = 'Sd4iHTwEBiWWCCa-r' // EmailJS → Account → Public Key
 
 const Contact = () => {
   const [form, setForm] = useState({ from_name: '', from_email: '', subject: '', message: '' })
   const [status, setStatus] = useState(null)
+  const [errorMsg, setErrorMsg] = useState('')
 
   const handleChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }))
 
   const handleSubmit = async e => {
     e.preventDefault()
     setStatus('loading')
+    setErrorMsg('')
     try {
-      await emailjs.send(SERVICE_ID, TEMPLATE_ID, {
-        from_name:  form.from_name,
-        from_email: form.from_email,
-        subject:    form.subject,
-        message:    form.message,
-        to_email:   'ashokkumarkarki5@gmail.com',
-      }, PUBLIC_KEY)
-      setStatus('success')
-      setForm({ from_name: '', from_email: '', subject: '', message: '' })
-      setTimeout(() => setStatus(null), 6000)
+      const result = await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name:  form.from_name,
+          from_email: form.from_email,
+          subject:    form.subject,
+          message:    form.message,
+          to_email:   PERSONAL_INFO.email,
+          reply_to:   form.from_email,
+        },
+        { publicKey: PUBLIC_KEY }
+      )
+      if (result.status === 200) {
+        setStatus('success')
+        setForm({ from_name: '', from_email: '', subject: '', message: '' })
+        setTimeout(() => setStatus(null), 6000)
+      } else {
+        throw new Error(`Unexpected status: ${result.status}`)
+      }
     } catch (err) {
-      console.error('EmailJS error:', err)
+      const msg = err?.text || err?.message || 'Unknown error'
+      console.error('EmailJS error:', msg, err)
+      setErrorMsg(msg)
       setStatus('error')
-      setTimeout(() => setStatus(null), 6000)
+      setTimeout(() => setStatus(null), 8000)
     }
   }
 
@@ -119,13 +134,13 @@ const Contact = () => {
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-slate-400">Your Name *</label>
                     <input type="text" name="from_name" value={form.from_name} onChange={handleChange} required
-                      placeholder="John Doe"
+                    
                       className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-blue-400/60 transition-all" />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-slate-400">Your Email *</label>
                     <input type="email" name="from_email" value={form.from_email} onChange={handleChange} required
-                      placeholder="john@example.com"
+
                       className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-blue-400/60 transition-all" />
                   </div>
                 </div>
@@ -151,9 +166,13 @@ const Contact = () => {
                   </div>
                 )}
                 {status === 'error' && (
-                  <div className="flex items-center gap-3 p-4 bg-red-500/10 border border-red-500/30 rounded-xl text-red-400 animate-fadeIn">
-                    <AlertCircle className="w-5 h-5 shrink-0" />
-                    <span className="text-sm font-medium">Failed to send. Please try again or email me directly.</span>
+                  <div className="flex items-start gap-3 p-4 bg-red-500/10 border border-red-500/30 rounded-xl text-red-400 animate-fadeIn">
+                    <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
+                    <div className="text-sm">
+                      <p className="font-medium">Failed to send message.</p>
+                      {errorMsg && <p className="text-red-300/70 mt-1 text-xs break-all">{errorMsg}</p>}
+                      <p className="text-red-300/70 mt-1 text-xs">Check browser console for details or email directly: <span className="font-medium">{PERSONAL_INFO.email}</span></p>
+                    </div>
                   </div>
                 )}
 
