@@ -1,5 +1,6 @@
 import React from 'react'
 import { ThemeProvider, useTheme } from './components/context/ThemeContext'
+import WhatsAppButton from './components/ui/WhatsAppButton'
 import Navbar from './components/Layout/Navbar'
 import Footer from './components/Layout/Footer'
 import Hero from './components/section/Hero'
@@ -39,6 +40,7 @@ const AppContent = () => {
         <Contact />
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }
