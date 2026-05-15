@@ -7,7 +7,7 @@ export const projects = [
         category: 'Full Stack',
         technologies: ['React', 'Django REST', 'MySQL', 'Tailwind'],
         metrics: '0 Users',
-        demourl: 'https://gym-management-system-gamma-ten.vercel.app/home',
+        demourl: 'https://gym-management-system-eight-drab.vercel.app/',
         githubUrl: 'https://github.com/ashok0960/Gym-Management-system',
         features: ['Product Catalog', 'Shopping Cart', 'Payment Processing', 'Order Management', 'Admin Dashboard'],
         stats: { users: '2.5K+', revenue: '$50K+', uptime: '99.9%' }
