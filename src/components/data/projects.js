@@ -54,14 +54,14 @@ export const projects = [
     },
     {
         id: 3,
-        title: 'Social Media Dashboard',
-        description: "Social analytics dashboard providing insights from multiple platforms. Real-time metrics, engagement tracking, content calendar, and automated posting capabilities.",
+        title: 'Job Portal Application',
+        description: "Comprehensive job portal connecting job seekers and employers. Features include job listings, resume uploads, application tracking, and employer dashboards for managing postings and candidates.",
         img: "/images/projects/project3.png",
         category: 'Full Stack',
-        technologies: ['React', 'Django', 'MySQL', 'Chart.js', 'Celery'],
+        technologies: ['React', 'Django', 'MySQL'],
         metrics: '10K Data Points',
         demourl: 'https://example.com/social-dashboard',
-        githubUrl: 'https://github.com/ashok0960/social-dashboard',
+        githubUrl: 'https://github.com/ashok0960/Job-portal',
         features: ['Multi-Platform Analytics', 'Content Calendar', 'Auto-Posting', 'Real-time Metrics', 'Report Generation'],
         stats: { metrics: '10K+', platforms: '4+', companies: '200+' }
     },
@@ -78,32 +78,6 @@ export const projects = [
         features: ['Smooth Animations', 'Dark Mode', 'Responsive Design', 'SEO Optimized'],
         stats: { lighthouse: '98', performance: '95', accessibility: '100' }
     },
-    {
-        id: 5,
-        title: 'Learning Management System',
-        description: "Comprehensive LMS with course management, student progress tracking, quizzes, assignments, and certification. Includes video hosting and interactive content.",
-        img: "/images/projects/project5.png",
-        category: 'Full Stack',
-        technologies: ['React', 'Django', 'PostgreSQL', 'Video.js', 'AWS S3'],
-        metrics: '1.5K Students',
-        demourl: 'https://example.com/lms',
-        githubUrl: 'https://github.com/ashok0960/lms',
-        features: ['Course Management', 'Progress Tracking', 'Interactive Quizzes', 'Certifications', 'Video Hosting'],
-        stats: { courses: '50+', students: '1.5K+', completion: '85%' }
-    },
-    {
-        id: 6,
-        title: 'Weather Forecast App',
-        description: "Real-time weather application with location-based forecasts, weather maps, alerts, and beautiful UI. Fetches data from multiple weather APIs.",
-        img: "/images/projects/project6.png",
-        category: 'Frontend',
-        technologies: ['React', 'OpenWeather API', 'Mapbox', 'Tailwind CSS'],
-        metrics: '50K+ Users',
-        demourl: 'https://example.com/weather',
-        githubUrl: 'https://github.com/ashok0960/weather-app',
-        features: ['Real-time Forecasts', 'Weather Maps', 'Location Services', 'Alerts', 'Historical Data'],
-        stats: { users: '50K+', requests: '1M+/day', accuracy: '98%' }
-    }
 ];
 
 export const categories = ["All", "Frontend", "Full Stack"];
