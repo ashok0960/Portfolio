@@ -89,10 +89,6 @@ const Projects = () => {
                 {cat}
               </button>
             ))}
-            <button onClick={() => setShowModal(true)}
-              className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-600 to-cyan-600 text-white text-sm font-semibold rounded-full hover:opacity-90 hover:scale-105 transition-all shadow-lg shadow-blue-500/20">
-              <Plus className="w-4 h-4" /> Add from GitHub
-            </button>
           </div>
         </FadeIn>
 
