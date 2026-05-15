@@ -1,5 +1,18 @@
 export const projects = [
     {
+        id: 0,
+        title: 'Gym Management System',
+        description: "Full-stack application for managing gym operations, including member management, class scheduling, and payment processing.",
+        img: "/images/projects/project1.png",
+        category: 'Full Stack',
+        technologies: ['React', 'Django REST', 'MySQL', 'Tailwind'],
+        metrics: '0 Users',
+        demourl: 'https://gym-management-system-gamma-ten.vercel.app/home',
+        githubUrl: 'https://github.com/ashok0960/Gym-Management-system',
+        features: ['Product Catalog', 'Shopping Cart', 'Payment Processing', 'Order Management', 'Admin Dashboard'],
+        stats: { users: '2.5K+', revenue: '$50K+', uptime: '99.9%' }
+    },
+    {
         id: 1,
         title: 'E-Commerce Platform',
         description: "Full-stack e-commerce platform with product management, cart, checkout, and payment integration. Features include admin dashboard, inventory management, and order tracking.",
@@ -20,7 +33,7 @@ export const projects = [
         category: 'Full Stack Development',
         technologies: ['React', 'Django', 'MySQL', 'Tailwind CSS', 'Stripe'],
         metrics: '10K+ Bookings',
-        demourl: 'https://wanderluxe-demo.com',
+        demourl: 'https://tour-and-travel-wheat.vercel.app/',
         githubUrl: 'https://github.com/ashok0960/tour-and-travel.git',
         features: [
             'Interactive destination search with filters',
